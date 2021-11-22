@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+#header{
+	position:relative;
+	width:100%;
+	z-index:1; 
+	text-align:center;
+	font-family: 'Sonsie One', cursive;
+}
+h1.logo{width:auto;}
+.login{
+	margin:0 0 0 80%; 
+	list-style:none; 
+	margin-top:10px;
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#header{border:1px solid #fff;}
+
+#nav {
+	width:980px; 
+	margin:3px auto 0; 
+	text-align:center;
+	font-family: 'Do Hyeon', sans-serif;
+}
+#nav > ul:after {
+	content:""; 
+	display:block; 
+	clear:both;
+}
+#nav > ul > li {
+	display:inline-block; 
+	vertical-align:top;
+}
+#nav > ul > li > a {
+	display:block; 
+	position:relative; 
+	height:40px; 
+	line-height:40px; 
+	padding:0 24px; 
+	font-size:18px; 
+	letter-spacing:0.1em; 
+	white-space:nowrap;
+}
+#nav > ul > li > a:before {
+	content:""; 
+	opacity:.2; 
+	position:absolute; 
+	left:0; 
+	top:50%; 
+	height:9px; 
+	margin-top:-5px; 
+	border-left:1px solid #707070;
+}
+#nav > ul > li:first-child a:before {
+	display:none;
+}
+#nav > ul > li > div {
+	display:none; 
+	position:absolute; 
+	z-index:2; 
+	left:0; 
+	right:0; 
+	top:114px; 
+	height:38px; 
+	text-align:center; 
+
+}
+#nav > ul > li > div > ul {
+	opacity:0; 
+	display:inline-block;
+}
+#nav > ul > li > div > ul:after {
+	content:""; 
+	display:block; 
+	clear:both;
+}
+#nav > ul > li > div > ul > li {
+	float:left; 
+	margin:0 10px;
+}
+#nav > ul > li > div > ul > li > a {
+	display:block; 
+	height:38px; 
+	line-height:38px; 
+	padding:0 5px; 
+	color:#666;
+}

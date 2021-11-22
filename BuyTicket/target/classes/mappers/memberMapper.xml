@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+	<!-- 다른 Mapper와 중복되지 않도록 네임스페이스를 기재한다. -->
+	<!-- **** namespace의 내용이 DAOImpl의 내용과 같아야 한다. -->
+	<mapper namespace="com.company.member.mappers.memberMapper">
+	
+	<!-- 회원가입 -->
+	<insert id="register">
+		INSERT INTO member(
+			user_id
+			, user_pw
+			, user_name
+			, user_birth
+			, user_email
+			, user_phone
+			, user_gender
+			, user_oaddress
+			, user_address
+			, user_detailaddress
+		) VALUES (
+			#{userId}
+			, #{userPw}
+			, #{userName}
+			, #{userBirth}
+			, #{userEmail}
+			, #{userPhone}
+			, #{userGender}
+			, #{sample6_postcode}
+			, #{sample6_address}
+			, #{sample6_detailAddress}
+		)
+	</insert>
+	
+	<!-- 로그인 -->
+    
+    <select id="login" resultType="com.company.member.domain.LoginDTO" parameterType="com.company.member.domain.UserDTO">
+    SELECT user_name, user_id, user_pw
+    FROM MEMBER
+    WHERE user_id=#{userId}AND user_pw=#{userPw}
+    </select>
+    
+    <select id="loginCheck" resultType="String">
+		SELECT	user_name
+		FROM	MEMBER
+		WHERE	user_id=#{userId} AND user_pw=#{userPw}
+	</select>
+	
+	<!-- 아이디 중복 체크 -->
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE user_id = #{userId}
+	</select>
+</mapper>
